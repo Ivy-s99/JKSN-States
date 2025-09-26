@@ -1,2 +1,2 @@
 # JKSN-States
-Clothing Website 
+Clothing Website for your contemporary style
