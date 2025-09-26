@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="about-page">
+
+    <!-- Hero Section -->
+    <main class="about-page" style="padding:40px 20px; max-width:1100px; margin:0 auto;">
+      <!-- Hero -->
+      <section class="about-hero" style="text-align:center; margin-bottom:30px;">
+        <img src="images/logo.jpeg" alt="JKSN States logo" class="logo" style="width:260px; max-width:80%; height:auto; display:block; margin:0 auto 18px;" />
+        <div class="card">
+      <h1 style="font-size:28px; margin-bottom:8px; color:#ffffff;"> GET IN TOUCH</h1>
+      <p style="max-width:800px; margin:0 auto;  color:#ffffff;">
+        We will respond to every email within 24 hours, from Monday to Saturday.
+        Please select an option for your inquiry.
+      </p>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-wrap">
+      <form id="contact-form" class="contact-form" method="post" action="#">
+        <div class="neumorphic-card form-bubble">
+          <h1 style="font-size:28px; margin-bottom:8px; color:#ffffff;">Contact Us</h1>
+
+          <!-- Row 1: Full Name & Email -->
+          <div class="form-row">
+            <input type="text" id="full-name" name="full-name" placeholder="Full name" required />
+            <input type="email" id="email" name="email" placeholder="Email" required />
+          </div>
+
+          <!-- Row 2: Subject -->
+          <div class="form-row">
+            <input type="text" id="subject" name="subject" placeholder="Subject" required />
+          </div>
+
+          <!-- Row 3: Message -->
+          <div class="form-row">
+            <label for="message; ">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Your message" required></textarea>
+          </div>
+
+          <!-- Row 4: Checkbox -->
+          <div class="form-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="newsletter" name="newsletter" />
+              Subscribe to updates
+            </label>
+          </div>
+
+          <!-- Row 5: Submit -->
+          <div class="form-row">
+            <button type="submit" class="submit">Send message</button>
+            <span id="form-status" class="status" role="status" aria-live="polite"></span>
+            <span id="form-error" class="error" role="alert"></span>
+          </div>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <nav class="back-nav floating">
+    <a href="index.html">← Home</a>
+  </nav>
+
+  <script src="script.js"></script>
+</body>
+</html>

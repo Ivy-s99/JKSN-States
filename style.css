@@ -1,0 +1,531 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  background: url("images/background jksn state.jpg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Create blurred layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: inherit;
+  filter: blur(6px);
+  z-index: -1; /* keep it behind everything */
+}
+
+/* Remove blur on index */
+body.index::before {
+  filter: none;
+}
+
+
+
+a {
+  text-decoration: none;
+}
+
+
+
+/* LOGO & BANNER */
+.logo-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.logo {
+  max-width: 200px;
+}
+
+.banner {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#banner-text {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
+  color: #ffffff;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.back-nav.floating {
+  position: fixed;
+  top: 20px; 
+  left: 20px;                           /* small button in top-left */
+  z-index: 1000;
+}
+
+.back-nav.floating a {
+  display: inline-block;
+  padding: 10px 16px;
+  background: rgba(116, 114, 114, 0.7);          /* dark button background */
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-nav.floating a:hover {
+  background: rgba(106, 103, 103, 0.9);
+  transform: scale(1.05);
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  text-align: center;
+}
+
+.shop-now-btn {
+  padding: 15px 30px;
+  font-size: 2.0rem;
+  background-color: #090909;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.shop-now-btn:hover {
+  background-color: #9a9694;
+  transform: scale(1.05);
+}
+
+/* Scrolling Text */
+.scrolling-text {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.scrolling-text span {
+  display: inline-block;
+  padding-left: 100%; /* start off screen */
+  animation: scroll 15s linear infinite;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fcf9f9;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* Product grid layout */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 products per row */
+  gap: 20px; /* spacing between items */
+  max-width: 1200px; /* keep it neat */
+  margin: 40px auto; /* center in page */
+  padding: 0 20px;
+}
+
+/* Product card styling */
+.product-card {
+  background: #282727;
+  border: 1px solid #dddddd53;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* subtle hover lift */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.product-card button {
+  margin: 5px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.product-card .btn {
+  background-color: #aeadab;
+  color: #0e0d0d;
+}
+
+.product-card .btn:hover {
+  background-color: #b9b4b17b;
+}
+
+
+
+/* PAGINATION */
+.pagination {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.next-page {
+  background-color: #000;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.next-page:hover {
+  background-color: #444;
+}
+
+/* Make the page full height */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* Flex layout to push footer to bottom */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content grows to fill space */
+main {
+  flex: 1;
+}
+
+/* FOOTER */
+footer {
+  background: #f2f2f2;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  /* stick to bottom if page is short */
+  margin-top: auto;
+}
+
+.footer-box {
+  margin: 20px;
+  text-align: center;
+}
+
+.footer-box h3 {
+  margin-bottom: 15px;
+}
+
+.site-nav {
+  list-style: none;
+  padding: 0;
+}
+
+.site-nav li {
+  margin: 5px 0;
+}
+
+.site-nav a {
+  color: #333;
+  transition: color 0.2s;
+}
+
+.site-nav a:hover {
+  color: #000;
+}
+
+/* SOCIAL ICONS */
+.wrapper {
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+}
+
+.icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon i {
+  font-size: 20px;
+}
+
+/* NEUMORPHIC CLASSES */
+.neumorphic {
+  background: #e0e5ec; 
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #ffffff;
+}
+
+.neumorphic-insert {
+  background: #e0e5ec; 
+  border-radius: 20px;
+  box-shadow: inset 10px 10px 20px #a3b1c6, inset -10px -10px 20px #ffffff;
+}
+
+.neumorphic-card {
+  display: flex;
+  flex-direction: column; /* fixed typo */
+  justify-content: center;
+  align-items: center;
+  padding: 30px; 
+  width: 300px;
+  text-align: center;
+}
+
+
+body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Product Grid */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Product Card */
+    .product-card {
+      text-align: center;
+      background: #fff;
+      padding: 16px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Product Image */
+    .product-card img {
+      width: 100%;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    .product-card img:hover {
+      opacity: 0.9;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      flex-direction: column;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 16px;
+    }
+    .lightbox .controls {
+      margin-top: 20px;
+    }
+    .lightbox button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: none;
+      background: 
+      -#423d3dbe;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+ @keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url("images/background jksn state.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+/* Center everything */
+.contact-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+//* Form card */
+.contact-form .neumorphic-card {
+  background: rgba(255, 255, 255, 0.25); /* glassy effect */
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 50px 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 900px;
+  box-sizing: border-box;
+  border: none; /* removed border */
+}
+
+/* Form Rows */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px; 
+  width: 100%;
+}
+
+/* Label for the textarea (Message) */
+.form-row label {
+  color: #fff; /* makes "Message" text white */
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* Checkbox label ("Subscribe to updates") */
+.checkbox-label {
+  color: #fff; /* makes "Subscribe to updates" text white */
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between checkbox and text */
+}
+
+
+/* Inputs and textarea without borders */
+.form-row input,
+.form-row textarea {
+  width: 100%;
+  padding: 15px 20px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none; /* removed border */
+  background: rgba(255, 255, 255, 0.35); /* subtle glassy background */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  outline: none;
+  transition: 0.3s;
+}
+
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+  color: rgba(0,0,0,0.6);
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+/* Submit button */
+.form-row button.submit {
+  width: 100%;
+  padding: 15px 25px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none; /* removed border */
+  background: rgba(99, 96, 97, 0.88);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(47, 46, 47, 0.72);
+  transition: 0.3s;
+}
+
+.form-row button.submit:hover {
+  background: rgba(21, 21, 21, 0.95);
+  box-shadow: 0 8px 25px rgba(21, 21, 20, 0.87);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .contact-form .neumorphic-card {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form .neumorphic-card {
+    max-width: 600px;
+    padding: 40px 30px;
+  }
+
+  .form-row input,
+  .form-row textarea,
+  .form-row button.submit {
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form .neumorphic-card {
+    max-width: 100%;
+    padding: 20px 15px;
+  }
+
+  .form-row input,
+  .form-row textarea,
+  .form-row button.submit {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+}
